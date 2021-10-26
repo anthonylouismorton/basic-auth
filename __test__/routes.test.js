@@ -3,8 +3,8 @@
 const {db} = require('../lib/model');
 const supertest = require('supertest');
 const app = require('../lib/server.js');
-const { response } = require('express');
 const request = supertest(app.app);
+const base64 = require('base-64')
 
 beforeAll(async () => {
   await db.sync();
@@ -24,12 +24,13 @@ describe('POST to /signup to create a new user', () => {
     expect(response.body.username).toEqual('Anthony')
   });
 
-})
+});
 
 describe('POST to /signin to login as a user (use basic auth)', () => {
   it('Should signin a user', async () => {
-  
-    const response = await request.post('/signin').send('john foo')
-    expect(response.status).toBe(200);
+    const encoded = base64.encode('Anthony:password')
+    const response = await request.post('/signin').set("authorization", `Basic ${encoded}`)
+    expect(response.body.username).toEqual('Anthony');
   });
-})
+});
+
