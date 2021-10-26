@@ -1,4 +1,4 @@
-# api-server
+# basic-auth
 
 Created by Anthony Morton
 
@@ -9,10 +9,10 @@ Express, jest, dotenv, supertest, nodemon, pg, sequelize, sequelize-cli, sqlite3
 Testing location / employee route through model. Testing Get, Put, Post, Delete from database
 
 ## Links to application deployment
-location: https://anthonymorton-basic-api-server.herokuapp.com/location
-employee: https://anthonymorton-basic-api-server.herokuapp.com/employee
-pull request: https://github.com/anthonylouismorton/basic-api-server/pull/1
-actions: https://github.com/anthonylouismorton/basic-api-server/actions
+signin: https://basic-auth-anthony-morton.herokuapp.com/signin
+signup: https://basic-auth-anthony-morton.herokuapp.com/signup
+pull request: https://github.com/anthonylouismorton/basic-auth/pull/1
+actions: https://github.com/anthonylouismorton/basic-auth/actions
 
 ## Include embedded UML
 ![uml](./lab6.png)
